@@ -6,7 +6,7 @@ Markdown preview.
 
 ![Screenshot of catppuccin-latte](./docs/screenshot.png)
 
-Other flavours: [Frappé](../frappe) · [Macchiato](../macchiato) · [Mocha](../mocha)
+Other flavours: [Frappé](https://my.inkdrop.app/plugins/catppuccin-frappe) · [Macchiato](https://my.inkdrop.app/plugins/catppuccin-macchiato) · [Mocha](https://my.inkdrop.app/plugins/catppuccin-mocha)
 
 ## How to install
 

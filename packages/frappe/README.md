@@ -5,7 +5,7 @@ A single theme covering the app UI, the editor syntax highlighting and the Markd
 
 ![Screenshot of catppuccin-frappe](./docs/screenshot.png)
 
-Other flavours: [Latte](../latte) · [Macchiato](../macchiato) · [Mocha](../mocha)
+Other flavours: [Latte](https://my.inkdrop.app/plugins/catppuccin-latte) · [Macchiato](https://my.inkdrop.app/plugins/catppuccin-macchiato) · [Mocha](https://my.inkdrop.app/plugins/catppuccin-mocha)
 
 ## How to install
 
