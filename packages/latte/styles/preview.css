@@ -1,0 +1,91 @@
+@layer theme.preview {
+  :root {
+    /* Code blocks & inline code — surface0 tints, matching the editor */
+    --mde-preview-codeblock-background-color: hsl(var(--hsl-neutral-300) / 30%);
+    --mde-preview-codeblock-border-color: hsl(var(--hsl-neutral-300) / 80%);
+    --mde-preview-codeblock-meta-background-color: hsl(
+      var(--hsl-neutral-300) / 50%
+    );
+    --mde-preview-inline-code-border-width: 1px;
+    --mde-preview-inline-code-border-color: hsl(var(--hsl-neutral-300) / 80%);
+    --mde-preview-inline-code-background-color: hsl(
+      var(--hsl-neutral-300) / 40%
+    );
+
+    /*
+     * Mermaid diagrams. Overriding these base tokens cascades to most node,
+     * actor, state, packet, tag and requirement surfaces via mermaid.css's own
+     * var() chain — the entries below only cover the token families mermaid.css
+     * colors independently, plus the ones whose light branch reaches for the
+     * slate and amber ramps Latte does not remap.
+     */
+    --mermaid-line-color: hsl(var(--hsl-neutral-800)); /* overlay2 */
+    --mermaid-node-background-color: hsl(var(--hsl-violet-500) / 15%);
+    --mermaid-node-border-color: hsl(var(--hsl-violet-500)); /* lavender */
+    --mermaid-cluster-background-color: hsl(var(--hsl-neutral-500) / 15%);
+    --mermaid-cluster-border-color: hsl(var(--hsl-neutral-400));
+    --mermaid-edge-label-background-color: hsl(var(--hsl-neutral-100));
+
+    /* Notes (sequence / state) — yellow, the sticky-note hue */
+    --mermaid-note-background-color: hsl(var(--hsl-yellow-500) / 20%);
+    --mermaid-note-border-color: hsl(var(--hsl-yellow-600));
+    --mermaid-note-text-color: hsl(var(--hsl-yellow-900));
+
+    /* Sequence label box — pink chip with neutral text */
+    --mermaid-label-box-background-color: hsl(var(--hsl-pink-500) / 20%);
+    --mermaid-label-box-border-color: hsl(var(--hsl-pink-500));
+    --mermaid-label-text-color: hsl(var(--hsl-neutral-950));
+
+    /* Gantt */
+    --mermaid-section-background-color: hsl(var(--hsl-neutral-500) / 22%);
+    --mermaid-alt-section-background-color: hsl(var(--hsl-neutral-500) / 10%);
+    --mermaid-task-background-color: hsl(var(--hsl-blue-500) / 25%);
+    --mermaid-task-border-color: hsl(var(--hsl-blue-500));
+    --mermaid-active-task-background-color: hsl(var(--hsl-violet-500) / 30%);
+    --mermaid-active-task-border-color: hsl(var(--hsl-violet-500));
+    --mermaid-done-task-background-color: hsl(var(--hsl-neutral-400));
+    --mermaid-done-task-border-color: hsl(var(--hsl-neutral-600));
+    --mermaid-crit-task-background-color: hsl(var(--hsl-red-500) / 25%);
+    --mermaid-crit-task-border-color: hsl(var(--hsl-red-500));
+    --mermaid-grid-color: hsl(var(--hsl-neutral-400));
+    --mermaid-today-line-color: hsl(var(--hsl-red-500));
+
+    /* Seed palette — pie / git / quadrant / journey categorical scales */
+    --mermaid-primary-color: hsl(var(--hsl-violet-200));
+    --mermaid-secondary-color: hsl(var(--hsl-pink-200));
+    --mermaid-tertiary-color: hsl(var(--hsl-yellow-200));
+
+    /* Event modeling — one hue per element kind */
+    --mermaid-em-event-background-color: hsl(var(--hsl-yellow-500) / 20%);
+    --mermaid-em-event-border-color: hsl(var(--hsl-yellow-500));
+
+    /* Cynefin — one hue per domain */
+    --mermaid-cynefin-clear-background-color: hsl(var(--hsl-yellow-500) / 20%);
+  }
+
+  /*
+   * Headings take the same rainbow-highlight sequence as the editor, so a note
+   * reads consistently across the split view. --mde-preview-heading-color only
+   * covers h1–h6 as a group, hence the per-level rules.
+   */
+  .mde-preview {
+    h1 {
+      color: var(--color-red-500);
+    }
+    h2 {
+      color: var(--color-orange-500);
+    }
+    h3 {
+      color: var(--color-yellow-500);
+    }
+    h4 {
+      color: var(--color-green-500);
+    }
+    h5 {
+      color: var(--color-cyan-500);
+    }
+    h6 {
+      color: var(--color-violet-500);
+    }
+  }
+}

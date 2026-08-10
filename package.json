@@ -1,0 +1,11 @@
+{
+  "name": "inkdrop-catppuccin-workspace",
+  "private": true,
+  "description": "Workspace for the four Catppuccin theme flavors for Inkdrop",
+  "license": "MIT",
+  "repository": "https://github.com/inkdropapp/catppuccin",
+  "author": "Takuya Matsuyama <t@inkdrop.app>",
+  "scripts": {
+    "generate-palette": "pnpm -r exec generate-palette"
+  }
+}

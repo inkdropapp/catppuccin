@@ -1,0 +1,385 @@
+@layer theme.ui {
+  /*
+   * Catppuccin Latte — semantic overrides for Inkdrop v6.
+   *
+   * tokens.css remaps the neutral ramp and twelve accent ramps, which carries
+   * most of the chrome on its own. The declarations here cover the light branch
+   * of the app's light-dark() defaults that reach for values outside the Latte
+   * palette — plain white/black, the gray/stone/zinc/slate ramps, and the three
+   * accent ramps (amber, lime, emerald) Latte has no counterpart for.
+   *
+   * Surface layering follows Catppuccin's own convention:
+   *   base   → page, editor, modal content
+   *   mantle → panels, menus, popups, note list
+   *   crust  → sidebar chrome, inputs
+   */
+
+  :root {
+    /*-------------------
+      Brand Colors
+    --------------------*/
+    --secondary-color: var(--color-neutral-950);
+    --secondary-color-hover: var(--color-neutral-900);
+    --secondary-color-focus: var(--color-neutral-900);
+    --secondary-color-down: var(--color-neutral-800);
+    --secondary-color-active: var(--color-neutral-800);
+
+    /*-------------------
+      Form Input
+    --------------------*/
+    --input-background: var(--color-neutral-200); /* crust */
+    --input-placeholder-color: var(--color-neutral-500); /* surface2 */
+    --input-placeholder-focus-color: var(--color-neutral-600); /* overlay0 */
+    --input-error-placeholder-color: var(--color-red-300);
+    --input-error-placeholder-focus-color: var(--color-red-400);
+
+    /*-------------------
+      Focused Input
+    --------------------*/
+    --focused-form-border-color: var(--color-violet-500); /* lavender */
+    --focused-form-muted-border-color: hsl(var(--hsl-violet-500) / 60%);
+    --focused-outline-color: hsl(var(--hsl-violet-500) / 30%);
+
+    /*-------------------
+      Page
+    --------------------*/
+    --page-background: var(--color-neutral-50); /* base */
+    --text-color: var(--color-neutral-950); /* text */
+
+    /*-------------------
+      Links
+    --------------------*/
+    --link-hover-color: var(--color-sky-500); /* sky */
+
+    /*-------------------
+      Loader
+    --------------------*/
+    --loader-fill-color: hsl(var(--hsl-neutral-950) / 10%);
+    --inverted-loader-fill-color: hsl(var(--hsl-neutral-50) / 15%);
+
+    /*-------------------
+      Site Colors
+    --------------------*/
+
+    /*
+     * Latte has a single green where Inkdrop expects both green and olive, so
+     * olive takes the green ramp's shades — the same trick the app itself uses
+     * for brown (--color-yellow-800).
+     */
+    --olive: var(--color-green-700);
+    --light-olive: var(--color-green-600);
+    --olive-background: var(--color-green-200);
+    --olive-header-color: var(--color-green-800);
+    --olive-text-color: var(--color-green-700);
+    --olive-hover: var(--color-green-800);
+    --olive-focus: var(--color-green-800);
+    --olive-down: var(--color-green-900);
+    --olive-active: var(--color-green-900);
+    --light-olive-hover: var(--color-green-700);
+    --light-olive-focus: var(--color-green-700);
+    --light-olive-down: var(--color-green-800);
+    --light-olive-active: var(--color-green-800);
+
+    /*---   Neutrals  ---*/
+    --white: var(--color-neutral-50); /* base */
+    --off-white: var(--color-neutral-100); /* mantle */
+    --dark-white: var(--color-neutral-200); /* crust */
+    --mid-white: var(--color-neutral-300); /* surface0 */
+    --full-black: var(--color-neutral-950);
+
+    --white-hover: var(--color-neutral-100);
+    --off-white-hover: var(--color-neutral-200);
+    --dark-white-hover: var(--color-neutral-300);
+    --white-focus: var(--color-neutral-200);
+    --off-white-focus: var(--color-neutral-300);
+    --dark-white-focus: var(--color-neutral-400);
+    --white-down: var(--color-neutral-300);
+    --off-white-down: var(--color-neutral-400);
+    --dark-white-down: var(--color-neutral-500);
+    --white-active: var(--color-neutral-300);
+    --off-white-active: var(--color-neutral-400);
+    --dark-white-active: var(--color-neutral-500);
+
+    /*-------------------
+      Alpha Colors
+    --------------------*/
+    --subtle-transparent-black: hsl(var(--hsl-neutral-950) / 3%);
+    --transparent-black: hsl(var(--hsl-neutral-950) / 5%);
+    --strong-transparent-black: hsl(var(--hsl-neutral-950) / 10%);
+    --very-strong-transparent-black: hsl(var(--hsl-neutral-950) / 15%);
+
+    --subtle-transparent-white: hsl(var(--hsl-neutral-50) / 20%);
+    --transparent-white: hsl(var(--hsl-neutral-50) / 40%);
+    --strong-transparent-white: hsl(var(--hsl-neutral-50) / 60%);
+
+    /*-------------------
+      Accents
+    --------------------*/
+    --floating-shadow:
+      0px 2px 4px 0px hsl(var(--hsl-neutral-950) / 12%),
+      0px 2px 10px 0px hsl(var(--hsl-neutral-950) / 15%);
+    --floating-shadow-hover:
+      0px 2px 4px 0px hsl(var(--hsl-neutral-950) / 15%),
+      0px 2px 10px 0px hsl(var(--hsl-neutral-950) / 25%);
+    --raised-shadow:
+      0 1.5px 3px -2px hsl(var(--hsl-neutral-950) / 25%),
+      0 4px 6px hsl(var(--hsl-neutral-950) / 12%),
+      0 8px 12px -1px hsl(var(--hsl-neutral-950) / 8%);
+
+    /*-------------------
+      Emotive Colors
+    --------------------*/
+
+    /* Latte has no amber; warnings use yellow, per the Catppuccin style guide */
+    --warning-color: hsl(var(--hsl-yellow-500));
+    --warning-border-color: hsl(var(--hsl-yellow-600) / 70%);
+    --warning-text-color: hsl(var(--hsl-yellow-900) / 90%);
+
+    /*-------------------
+      Neutral Text
+    --------------------*/
+    --dark-text-color: var(--color-neutral-950); /* text */
+    --muted-text-color: var(--color-ctp-subtext1); /* subtext1 */
+    --light-text-color: var(--color-neutral-900); /* subtext0 */
+    --unselected-text-color: var(--color-neutral-700); /* overlay1 */
+    --hovered-text-color: var(--color-neutral-950);
+    --pressed-text-color: var(--color-neutral-950);
+    --selected-text-color: var(--color-neutral-950);
+
+    --inverted-text-color: var(--color-neutral-50); /* on accent → base */
+    --inverted-muted-text-color: hsl(var(--hsl-neutral-50) / 80%);
+    --inverted-light-text-color: hsl(var(--hsl-neutral-50) / 70%);
+    --inverted-unselected-text-color: hsl(var(--hsl-neutral-50) / 50%);
+    --inverted-hovered-text-color: var(--color-neutral-50);
+    --inverted-pressed-text-color: var(--color-neutral-50);
+    --inverted-selected-text-color: var(--color-neutral-50);
+    --inverted-disabled-text-color: hsl(var(--hsl-neutral-50) / 30%);
+
+    /*-------------------
+      Borders
+    --------------------*/
+    --solid-border-color: var(--color-neutral-300); /* surface0 */
+    --white-border-color: hsl(var(--hsl-neutral-50) / 10%);
+    --selected-white-border-color: hsl(var(--hsl-neutral-50) / 80%);
+
+    /*-------------------
+      Button
+    --------------------*/
+    --button-background: var(--color-neutral-300) none;
+    --button-text-color: var(--color-ctp-subtext1);
+    --button-hover-background-color: var(--color-neutral-400);
+    --button-down-background-color: var(--color-neutral-500);
+    --button-active-background-color: var(--color-neutral-500);
+
+    --basic-button-hover-background: var(--color-neutral-100);
+    --basic-button-down-background: var(--color-neutral-200);
+
+    /*-------------------
+      Elements
+    --------------------*/
+    --mark-color: var(--color-neutral-950);
+
+    /*-------------------
+      Input
+    --------------------*/
+    --input-down-background: var(--color-neutral-100);
+    --input-down-border-color: hsl(var(--hsl-neutral-950) / 30%);
+
+    /*-------------------
+      Label
+    --------------------*/
+    --label-hover-background-color: var(--color-neutral-300);
+    --label-active-hover-background-color: var(--color-neutral-400);
+
+    /*-------------------
+      Segment
+    --------------------*/
+    --segment-background: var(--color-neutral-100);
+
+    /*-------------------
+      Menu
+    --------------------*/
+    --menu-background: var(--color-neutral-100);
+    --vertical-menu-background: hsl(var(--hsl-neutral-100) / 85%);
+    --tabular-menu-active-background: none var(--color-neutral-50);
+
+    /*-------------------
+      Message
+    --------------------*/
+    --message-background: hsl(var(--hsl-neutral-500) / 25%);
+
+    /*-------------------
+      Popup
+    --------------------*/
+    --popup-background: var(--color-neutral-100);
+
+    /*-------------------
+      Table
+    --------------------*/
+    --table-background: hsl(var(--hsl-neutral-50) / 60%);
+    --table-header-background: hsl(var(--hsl-neutral-300) / 40%);
+
+    /*-------------------
+      Checkbox
+    --------------------*/
+    --checkbox-disabled-label-color: var(--color-neutral-950);
+
+    /*-------------------
+      Dropdown
+    --------------------*/
+    --dropdown-menu-background: var(--color-neutral-100);
+    --inline-dropdown-menu-background: hsl(var(--hsl-neutral-100) / 85%);
+    --dropdown-error-item-hover-background: hsl(var(--hsl-red-500) / 10%);
+    --dropdown-error-item-active-background: hsl(var(--hsl-red-500) / 20%);
+
+    /*-------------------
+      Modal
+    --------------------*/
+    --modal-box-shadow:
+      0 2.8px 2.2px hsl(var(--hsl-neutral-950) / 7%),
+      0 6.7px 5.3px hsl(var(--hsl-neutral-950) / 10%),
+      0 12.5px 10px hsl(var(--hsl-neutral-950) / 12%),
+      0 22.3px 17.9px hsl(var(--hsl-neutral-950) / 14%),
+      0 41.8px 33.4px hsl(var(--hsl-neutral-950) / 17%),
+      0 100px 80px hsl(var(--hsl-neutral-950) / 24%);
+    --modal-box-header-background: var(--color-neutral-100);
+    --modal-box-content-background: var(--color-neutral-50);
+
+    /*-------------------
+      Side Bar
+    --------------------*/
+    --sidebar-background: var(--color-neutral-200); /* crust */
+    --sidebar-scrollbar-track-background: hsl(var(--hsl-neutral-950) / 4%);
+    --sidebar-scrollbar-thumb-background: hsl(var(--hsl-neutral-500) / 80%);
+    --sidebar-sync-status-view-background: hsl(var(--hsl-neutral-950) / 4%);
+
+    /*-------------------
+      Scroll Bar
+    --------------------*/
+    --scrollbar-track-background: hsl(var(--hsl-neutral-950) / 5%);
+    --scrollbar-thumb-background: hsl(var(--hsl-neutral-500) / 80%);
+
+    /*-------------------
+      Note List Bar
+    --------------------*/
+    --note-list-bar-background: var(--color-neutral-100); /* mantle */
+    --note-list-bar-pinned-section-footer-border-bottom: 4px solid
+      var(--color-neutral-300);
+
+    /*-------------------
+      Editor
+    --------------------*/
+    --editor-background: var(--color-neutral-50); /* base */
+    --editor-floating-actions-background: hsl(var(--hsl-neutral-100) / 80%);
+    --editor-drawer-background: hsl(var(--hsl-neutral-100) / 85%);
+
+    /*-------------------
+      Notifications
+    --------------------*/
+    --notification-item-background: hsl(var(--hsl-neutral-100) / 90%);
+
+    /*-------------------
+      Preferences
+    --------------------*/
+    --preferences-sidebar-background: var(--color-neutral-200);
+    --preferences-view-background: var(--color-neutral-50);
+
+    /*-------------------
+      Task Progress
+    --------------------*/
+    --task-progress-view-border-color: hsl(var(--hsl-neutral-950) / 30%);
+    --task-progress-view-background-color: hsl(var(--hsl-neutral-950) / 25%);
+    --task-progress-view-foreground-color: hsl(var(--hsl-neutral-50) / 60%);
+
+    /*-------------------
+      Note Status
+    --------------------*/
+    --note-status-active: hsl(var(--hsl-cyan-500)); /* sapphire */
+    --note-status-onhold: hsl(var(--hsl-yellow-500)); /* yellow */
+    --note-status-completed: hsl(var(--hsl-green-500)); /* green */
+    --note-status-dropped: hsl(var(--hsl-rose-500)); /* maroon */
+
+    /*-------------------
+      Tags
+    --------------------*/
+
+    /*
+     * The nine tag colors that map onto a remapped ramp resolve to Latte on
+     * their own. These five sit on ramps Latte does not cover — default, grey
+     * and black take the greyscale, olive takes green's shades and brown takes
+     * yellow's, mirroring how the app derives its own --brown.
+     */
+    --tag-light-default-background-color: hsl(var(--hsl-neutral-500) / 25%);
+    --tag-light-default-border-color: hsl(var(--hsl-neutral-500) / 60%);
+    --tag-light-default-text-color: hsl(var(--hsl-neutral-900));
+    --tag-light-default-active-background-color: hsl(
+      var(--hsl-neutral-500) / 45%
+    );
+    --tag-light-default-active-border-color: hsl(var(--hsl-neutral-600) / 70%);
+    --tag-light-default-active-text-color: hsl(var(--hsl-neutral-950));
+    --tag-light-default-circular-background-color: hsl(
+      var(--hsl-neutral-500) / 70%
+    );
+    --tag-light-default-circular-border-color: hsl(var(--hsl-neutral-600));
+
+    --tag-light-grey-background-color: hsl(var(--hsl-neutral-600) / 40%);
+    --tag-light-grey-border-color: hsl(var(--hsl-neutral-600) / 40%);
+    --tag-light-grey-text-color: hsl(var(--hsl-neutral-800));
+    --tag-light-grey-active-background-color: hsl(var(--hsl-neutral-600) / 60%);
+    --tag-light-grey-active-border-color: hsl(var(--hsl-neutral-600) / 60%);
+    --tag-light-grey-active-text-color: hsl(var(--hsl-neutral-950));
+    --tag-light-grey-circular-background-color: hsl(
+      var(--hsl-neutral-600) / 60%
+    );
+    --tag-light-grey-circular-border-color: hsl(var(--hsl-neutral-700));
+
+    --tag-light-black-background-color: hsl(var(--hsl-neutral-950) / 85%);
+    --tag-light-black-border-color: hsl(var(--hsl-neutral-300) / 30%);
+    --tag-light-black-text-color: hsl(var(--hsl-neutral-200));
+    --tag-light-black-active-background-color: hsl(
+      var(--hsl-neutral-900) / 85%
+    );
+    --tag-light-black-active-border-color: hsl(var(--hsl-neutral-300) / 40%);
+    --tag-light-black-active-text-color: hsl(var(--hsl-neutral-100));
+    --tag-light-black-circular-background-color: hsl(
+      var(--hsl-neutral-950) / 85%
+    );
+    --tag-light-black-circular-border-color: hsl(var(--hsl-neutral-400) / 40%);
+
+    --tag-light-olive-background-color: hsl(var(--hsl-green-700) / 20%);
+    --tag-light-olive-border-color: hsl(var(--hsl-green-700) / 40%);
+    --tag-light-olive-text-color: hsl(var(--hsl-green-800));
+    --tag-light-olive-active-background-color: hsl(var(--hsl-green-700) / 40%);
+    --tag-light-olive-active-border-color: hsl(var(--hsl-green-700) / 60%);
+    --tag-light-olive-active-text-color: hsl(var(--hsl-green-800));
+    --tag-light-olive-circular-background-color: hsl(
+      var(--hsl-green-700) / 60%
+    );
+    --tag-light-olive-circular-border-color: hsl(var(--hsl-green-800));
+
+    --tag-light-brown-background-color: hsl(var(--hsl-yellow-700) / 30%);
+    --tag-light-brown-border-color: hsl(var(--hsl-yellow-800) / 60%);
+    --tag-light-brown-text-color: hsl(var(--hsl-yellow-800));
+    --tag-light-brown-active-background-color: hsl(var(--hsl-yellow-700) / 50%);
+    --tag-light-brown-active-border-color: hsl(var(--hsl-yellow-800) / 60%);
+    --tag-light-brown-active-text-color: hsl(var(--hsl-yellow-800));
+    --tag-light-brown-circular-background-color: hsl(
+      var(--hsl-yellow-700) / 30%
+    );
+    --tag-light-brown-circular-border-color: hsl(var(--hsl-yellow-800));
+  }
+
+  /*-------------------
+    Acrylic background window
+  --------------------*/
+
+  :root:has(body.acrylic-window) {
+    --page-background: transparent;
+    --sidebar-background: hsl(var(--hsl-neutral-200) / 60%);
+    --note-list-bar-background: hsl(var(--hsl-neutral-100) / 80%);
+    --editor-background: hsl(var(--hsl-neutral-50) / 70%);
+    --editor-drawer-background: hsl(var(--hsl-neutral-100));
+    --inline-dropdown-menu-background: hsl(var(--hsl-neutral-100));
+    --vertical-menu-background: hsl(var(--hsl-neutral-100));
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "catppuccin-latte",
+  "version": "0.0.0",
+  "theme": true,
+  "themeAppearance": "light",
+  "description": "Catppuccin Latte theme for Inkdrop",
+  "styleSheets": [
+    "tokens.css",
+    "ui.css",
+    "syntax.css",
+    "preview.css"
+  ],
+  "keywords": [
+    "inkdrop",
+    "theme",
+    "catppuccin",
+    "light"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inkdropapp/catppuccin.git",
+    "directory": "packages/latte"
+  },
+  "author": "Takuya Matsuyama <t@inkdrop.app>",
+  "license": "MIT",
+  "scripts": {
+    "prepublishOnly": "generate-palette"
+  },
+  "devDependencies": {
+    "@inkdropapp/theme-dev-helpers": "^0.6.2"
+  },
+  "engines": {
+    "inkdrop": "^6.0.0"
+  }
+}

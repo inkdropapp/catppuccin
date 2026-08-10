@@ -1,0 +1,66 @@
+@layer theme.preview {
+  /*
+   * Catppuccin (dark flavours) Markdown preview. Shared verbatim by frappé,
+   * macchiato and mocha.
+   *
+   * Most of mermaid.css's dark branch already resolves through the remapped
+   * ramps, so the entries below cover only the tokens that reach for the amber
+   * and slate ramps Catppuccin does not remap, plus the code-block surfaces.
+   */
+  :root {
+    /* Code blocks & inline code — surface0 tints, matching the editor */
+    --mde-preview-codeblock-background-color: hsl(var(--hsl-neutral-700) / 30%);
+    --mde-preview-codeblock-border-color: hsl(var(--hsl-neutral-700) / 80%);
+    --mde-preview-codeblock-meta-background-color: hsl(
+      var(--hsl-neutral-700) / 50%
+    );
+    --mde-preview-inline-code-border-width: 1px;
+    --mde-preview-inline-code-border-color: hsl(var(--hsl-neutral-700) / 80%);
+    --mde-preview-inline-code-background-color: hsl(
+      var(--hsl-neutral-700) / 40%
+    );
+
+    /* Mermaid — edges and grid lines default to amber on dark */
+    --mermaid-line-color: hsl(var(--hsl-neutral-200)); /* overlay2 */
+    --mermaid-cluster-border-color: hsl(var(--hsl-neutral-600));
+    --mermaid-grid-color: hsl(var(--hsl-neutral-600));
+    --mermaid-done-task-background-color: hsl(var(--hsl-neutral-600));
+    --mermaid-done-task-border-color: hsl(var(--hsl-neutral-400));
+
+    /* Seed palette — pie / git / quadrant / journey categorical scales */
+    --mermaid-tertiary-color: hsl(var(--hsl-yellow-900));
+
+    /* Event modeling — one hue per element kind */
+    --mermaid-em-event-background-color: hsl(var(--hsl-yellow-950));
+    --mermaid-em-event-border-color: hsl(var(--hsl-yellow-600));
+
+    /* Cynefin — one hue per domain */
+    --mermaid-cynefin-clear-background-color: hsl(var(--hsl-yellow-950));
+  }
+
+  /*
+   * Headings take the same rainbow-highlight sequence as the editor, so a note
+   * reads consistently across the split view. --mde-preview-heading-color only
+   * covers h1–h6 as a group, hence the per-level rules.
+   */
+  .mde-preview {
+    h1 {
+      color: var(--color-red-500);
+    }
+    h2 {
+      color: var(--color-orange-500);
+    }
+    h3 {
+      color: var(--color-yellow-500);
+    }
+    h4 {
+      color: var(--color-green-500);
+    }
+    h5 {
+      color: var(--color-cyan-500);
+    }
+    h6 {
+      color: var(--color-violet-500);
+    }
+  }
+}
