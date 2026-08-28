@@ -210,9 +210,9 @@
     --syntax-list-color: var(--editor-foreground-color);
     --syntax-quote-color: var(--color-neutral-100);
     --syntax-quote-font-style: italic;
-    --syntax-emphasis-color: var(--editor-foreground-color);
+    --syntax-emphasis-color: var(--color-cyan-500);
     --syntax-emphasis-font-style: italic;
-    --syntax-strong-color: var(--editor-foreground-color);
+    --syntax-strong-color: var(--color-rose-500);
     --syntax-strong-font-weight: bold;
     --syntax-link-color: var(--color-blue-500);
     --syntax-link-text-decoration: underline;

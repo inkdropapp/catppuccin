@@ -12,6 +12,14 @@
       var(--hsl-neutral-300) / 40%
     );
 
+    --mde-preview-strong-color: var(--color-rose-500);
+    --mde-preview-em-color: var(--color-cyan-500);
+
+    /* Lists */
+    --mde-preview-list-marker-color: hsl(var(--hsl-blue-500));
+    --mde-preview-list-marker-2-color: hsl(var(--hsl-orange-500));
+    --mde-preview-list-marker-3-color: hsl(var(--hsl-green-500));
+
     /*
      * Mermaid diagrams. Overriding these base tokens cascades to most node,
      * actor, state, packet, tag and requirement surfaces via mermaid.css's own

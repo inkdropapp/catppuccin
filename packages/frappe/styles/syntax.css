@@ -91,6 +91,8 @@
     --md-blockquote-border-color: var(--color-neutral-500);
 
     --md-list-mark-color: var(--color-blue-500);
+    --md-list-mark-2-color: var(--color-orange-500);
+    --md-list-mark-3-color: var(--color-green-500);
     --md-task-marker-font-weight: bold;
 
     /*── Comments — overlay2, italic ──────────────────────────────────────────*/
@@ -210,9 +212,9 @@
     --syntax-list-color: var(--editor-foreground-color);
     --syntax-quote-color: var(--color-neutral-100);
     --syntax-quote-font-style: italic;
-    --syntax-emphasis-color: var(--editor-foreground-color);
+    --syntax-emphasis-color: var(--color-sky-500);
     --syntax-emphasis-font-style: italic;
-    --syntax-strong-color: var(--editor-foreground-color);
+    --syntax-strong-color: var(--color-red-500);
     --syntax-strong-font-weight: bold;
     --syntax-link-color: var(--color-blue-500);
     --syntax-link-text-decoration: underline;
