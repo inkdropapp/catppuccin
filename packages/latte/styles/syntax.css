@@ -104,6 +104,8 @@
     --md-blockquote-border-color: var(--color-neutral-500);
 
     --md-list-mark-color: var(--color-blue-500);
+    --md-list-mark-2-color: var(--color-orange-500);
+    --md-list-mark-3-color: var(--color-green-500);
     --md-task-marker-font-weight: bold;
 
     /*── Comments — overlay2, italic ──────────────────────────────────────────*/
