@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> This repository has moved to [inkdropapp/plugins](https://github.com/inkdropapp/plugins): [`packages/catppuccin-frappe`](https://github.com/inkdropapp/plugins/tree/main/packages/catppuccin-frappe), [`packages/catppuccin-latte`](https://github.com/inkdropapp/plugins/tree/main/packages/catppuccin-latte), [`packages/catppuccin-macchiato`](https://github.com/inkdropapp/plugins/tree/main/packages/catppuccin-macchiato), [`packages/catppuccin-mocha`](https://github.com/inkdropapp/plugins/tree/main/packages/catppuccin-mocha). It is archived and read-only; please open issues and pull requests there.
+
 # Catppuccin for Inkdrop
 
 The four [Catppuccin](https://github.com/catppuccin/catppuccin) flavours as Inkdrop themes,
